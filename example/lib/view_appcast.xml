@@ -33,8 +33,8 @@
             <sparkle:tags>
                 <sparkle:criticalUpdate/>
             </sparkle:tags>
-            <sparkle:criticalUpdate sparkle:version="1.19.0"></sparkle:criticalUpdate>
-            <enclosure url="https://play.google.com/store/apps/details?id=vet.vetz.view.app" sparkle:version="1.19.0" sparkle:os="android"/>
+            <sparkle:criticalUpdate sparkle:version="1.18.0"></sparkle:criticalUpdate>
+            <enclosure url="https://play.google.com/store/apps/details?id=vet.vetz.view.app" sparkle:version="1.18.0" sparkle:os="android"/>
         </item>
         <item>
             <!--This is used to force updates -->
