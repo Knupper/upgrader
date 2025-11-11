@@ -7,8 +7,8 @@
             <sparkle:tags>
                 <sparkle:criticalUpdate/>
             </sparkle:tags>
-            <sparkle:criticalUpdate sparkle:version="1.19.0"></sparkle:criticalUpdate>
-            <enclosure url="https://apps.apple.com/de/app/vetos-view-diagnostik/id6450950546" sparkle:version="1.19.0" sparkle:os="macos"/>
+            <sparkle:criticalUpdate sparkle:version="1.18.0"></sparkle:criticalUpdate>
+            <enclosure url="https://apps.apple.com/de/app/vetos-view-diagnostik/id6450950546" sparkle:version="1.18.0" sparkle:os="macos"/>
         </item>
         <item>
             <!--Es ist unklar wie Descriptions i18n können-->
@@ -25,8 +25,8 @@
             <sparkle:tags>
                 <sparkle:criticalUpdate/>
             </sparkle:tags>
-            <sparkle:criticalUpdate sparkle:version="1.19.0"></sparkle:criticalUpdate>
-            <enclosure url="https://stonetfstatesharedprod.blob.core.windows.net/st-one-view-msix/view-app-msix/view_app.msix" sparkle:version="1.19.0" sparkle:os="windows" />
+            <sparkle:criticalUpdate sparkle:version="1.18.0"></sparkle:criticalUpdate>
+            <enclosure url="https://stonetfstatesharedprod.blob.core.windows.net/st-one-view-msix/view-app-msix/view_app.msix" sparkle:version="1.18.0" sparkle:os="windows" />
         </item>
         <item>
             <!--This is used to force updates -->
@@ -34,23 +34,23 @@
                 <sparkle:criticalUpdate/>
             </sparkle:tags>
             <sparkle:criticalUpdate sparkle:version="1.18.0"></sparkle:criticalUpdate>
-            <enclosure url="https://play.google.com/store/apps/details?id=vet.vetz.view.app" sparkle:version="1.19.0" sparkle:os="android"/>
+            <enclosure url="https://play.google.com/store/apps/details?id=vet.vetz.view.app" sparkle:version="1.18.0" sparkle:os="android"/>
         </item>
         <item>
             <!--This is used to force updates -->
             <sparkle:tags>
                 <sparkle:criticalUpdate/>
             </sparkle:tags>
-            <sparkle:criticalUpdate sparkle:version="1.19.0"></sparkle:criticalUpdate>
-            <enclosure url="https://apps.apple.com/de/app/vetos-view-diagnostik/id6450950546" sparkle:version="1.19.0" sparkle:os="ios"/>
+            <sparkle:criticalUpdate sparkle:version="1.18.0"></sparkle:criticalUpdate>
+            <enclosure url="https://apps.apple.com/de/app/vetos-view-diagnostik/id6450950546" sparkle:version="1.18.0" sparkle:os="ios"/>
         </item>
         <item>
             <!--This is used to force updates -->
             <sparkle:tags>
                 <sparkle:criticalUpdate/>
             </sparkle:tags>
-            <sparkle:criticalUpdate sparkle:version="1.19.0"></sparkle:criticalUpdate>
-            <enclosure url="https://apps.apple.com/de/app/vetos-view-diagnostik/id6450950546" sparkle:version="1.19.0" sparkle:os="linux"/>
+            <sparkle:criticalUpdate sparkle:version="1.18.0"></sparkle:criticalUpdate>
+            <enclosure url="https://apps.apple.com/de/app/vetos-view-diagnostik/id6450950546" sparkle:version="1.18.0" sparkle:os="linux"/>
         </item>
         <!-- 
             The upgrader package can enforce a minimum app version simply by adding a version number to the description field in the app stores.

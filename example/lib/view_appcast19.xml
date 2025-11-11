@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>vetOS view - Appcast</title>
+        <item>
+            <!--This is used to force updates -->
+            <sparkle:tags>
+                <sparkle:criticalUpdate/>
+            </sparkle:tags>
+            <sparkle:criticalUpdate sparkle:version="1.19.0"></sparkle:criticalUpdate>
+            <enclosure url="https://apps.apple.com/de/app/vetos-view-diagnostik/id6450950546" sparkle:version="1.19.0" sparkle:os="macos"/>
+        </item>
+        <item>
+            <!--Es ist unklar wie Descriptions i18n können-->
+            <!--<description>Dies ist eine Test description</description>-->
+            <!--This is used to force updates -->
+            <sparkle:tags>
+                <sparkle:criticalUpdate/>
+            </sparkle:tags>
+            <sparkle:criticalUpdate sparkle:version="1.19.0"></sparkle:criticalUpdate>
+            <enclosure url="https://app.view.production.vetos.io" sparkle:version="1.19.0" sparkle:os="web"/>
+        </item>
+        <item>
+            <!--This is used to force updates -->
+            <sparkle:tags>
+                <sparkle:criticalUpdate/>
+            </sparkle:tags>
+            <sparkle:criticalUpdate sparkle:version="1.19.0"></sparkle:criticalUpdate>
+            <enclosure url="https://stonetfstatesharedprod.blob.core.windows.net/st-one-view-msix/view-app-msix/view_app.msix" sparkle:version="1.19.0" sparkle:os="windows" />
+        </item>
+        <item>
+            <!--This is used to force updates -->
+            <sparkle:tags>
+                <sparkle:criticalUpdate/>
+            </sparkle:tags>
+            <sparkle:criticalUpdate sparkle:version="1.19.0"></sparkle:criticalUpdate>
+            <enclosure url="https://play.google.com/store/apps/details?id=vet.vetz.view.app" sparkle:version="1.19.0" sparkle:os="android"/>
+        </item>
+        <item>
+            <!--This is used to force updates -->
+            <sparkle:tags>
+                <sparkle:criticalUpdate/>
+            </sparkle:tags>
+            <sparkle:criticalUpdate sparkle:version="1.19.0"></sparkle:criticalUpdate>
+            <enclosure url="https://apps.apple.com/de/app/vetos-view-diagnostik/id6450950546" sparkle:version="1.19.0" sparkle:os="ios"/>
+        </item>
+        <item>
+            <!--This is used to force updates -->
+            <sparkle:tags>
+                <sparkle:criticalUpdate/>
+            </sparkle:tags>
+            <sparkle:criticalUpdate sparkle:version="1.19.0"></sparkle:criticalUpdate>
+            <enclosure url="https://apps.apple.com/de/app/vetos-view-diagnostik/id6450950546" sparkle:version="1.19.0" sparkle:os="linux"/>
+        </item>
+        <!-- 
+            The upgrader package can enforce a minimum app version simply by adding a version number to the description field in the app stores.
+
+            For the Android Play Store, use this format:
+            [Minimum supported app version: 1.2.3]
+            
+            For the iOS App Store, use this format:
+            [:mav: 1.2.3] 
+        -->
+    </channel>
+</rss>
