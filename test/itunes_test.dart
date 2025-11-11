@@ -20,7 +20,12 @@ void main() {
     expect(
         iTunes.lookupURLByBundleId('com.google.Maps', useCacheBuster: false),
         equals(
-            'https://itunes.apple.com/lookup?bundleId=com.google.Maps&country=US'));
+            'https://itunes.apple.com/lookup?bundleId=com.google.Maps&country=US&lang=en'));
+    expect(
+        iTunes.lookupURLByBundleId('com.google.Maps',
+            useCacheBuster: false, language: 'ar'),
+        equals(
+            'https://itunes.apple.com/lookup?bundleId=com.google.Maps&country=US&lang=ar'));
     expect(iTunes.lookupURLById('585027354', useCacheBuster: false),
         equals('https://itunes.apple.com/lookup?id=585027354&country=US'));
     expect(
@@ -30,7 +35,7 @@ void main() {
 
     // Test the URL using the cache buster and remove it from the URL
     const testUrl =
-        'https://itunes.apple.com/lookup?bundleId=com.google.Maps&country=US&_cb=';
+        'https://itunes.apple.com/lookup?bundleId=com.google.Maps&country=US&lang=en&_cb=';
     final url = iTunes
         .lookupURLByBundleId('com.google.Maps', useCacheBuster: true)!
         .substring(0, testUrl.length);
@@ -39,9 +44,11 @@ void main() {
   });
 
   test('testing lookupByBundleId', () async {
-    final client = MockITunesSearchClient.setupMockClient();
+    final client = MockITunesSearchClient.setupMockClient(
+        verifyHeaders: {'header1': 'value1'});
     final iTunes = ITunesSearchAPI();
     iTunes.client = client;
+    iTunes.clientHeaders = {'header1': 'value1'};
 
     final response =
         await iTunes.lookupByBundleId('com.google.Maps', useCacheBuster: false);
@@ -65,10 +72,7 @@ void main() {
 
     final response = await iTunes.lookupByBundleId('com.google.MyApp',
         useCacheBuster: false);
-    expect(response, isInstanceOf<Map>());
-    final results = response!['results'];
-    expect(results, isNotNull);
-    expect(results.length, 0);
+    expect(response, isNull);
   }, skip: false);
 
   test('testing lookupById', () async {

@@ -1,3 +1,133 @@
+## 12.3.0
+
+- [525] [520] Added fallback version parsing for regional Play Store pages. (thanks to @youngkiu)
+
+## 12.2.0
+
+- [521] [522] Added fallback version parsing for regional Play Store pages. (thanks to @youngkiu)
+
+## 12.1.0
+
+- Added the showPrompt parameter to UpgradeAlert and UpgradeCard to hide the display of the prompt. (thanks to @EArminjon)
+
+## 12.0.0
+
+- Removed the use of device_info_plus to reduce the number of dependencies used by this package.
+- Renamed master branch to main.
+- The minimum Flutter version supported is now 3.27.0.
+
+## 11.5.1
+
+- [510] Updated device_info_plus to support 12.0.0 with updated constraint <13.0.0.
+- [511] Updated package_info_plus to support 9.0.0 with updated constraint <10.0.0.
+
+## 11.5.0
+
+- [482] Will now call showCupertinoDialog instead of showDialog for CupertinoApp.
+- [489] Fixed issue where null check operator used on a null value by checking the context.mounted before calling showDialog.
+- [500] Fixed the Hindi ('hi) translations issue with the app name in the body message.
+- Updated README to include CupertinoApp, and added a widget test for CupertinoApp.
+
+## 11.5.0-alpha.1
+
+- [489] Fixed issue where null check operator used on a null value by checking the context.mounted before calling showDialog.
+- [482] Will now call showCupertinoDialog instead of showDialog for CupertinoApp.
+
+## 11.4.0
+
+- Added new language translations for Uzbek ('uz'). (thanks to @Shuhrat-java)
+- Added new language translations for Romanian ('ro'). (thanks to @SK1n)
+
+## 11.3.2
+
+- Added Future keyword in return type of sendUserToAppStore(). (thanks to @EArminjon)
+
+## 11.3.1
+
+- Minor syntax change to fix compiler warning.
+- Added new method MockUpgraderOS.currentTypeFormatted to return the OS type pretty formatted.
+
+## 11.3.0
+
+- [429] Improved the Hindi ('hi') translations. (thanks to @aruhant)
+- [456] Fixed Italian ('it') language translations. (thanks to @marcorizza)
+- [459] Allowed for device_info_plus 11.0.0.
+
+## 11.2.0
+
+- [432] On CupertinoAlertDialog configured CupertinoActionButton isDefaultAction property for the Update button. Thanks to @lukemmtt for the change.
+- Added new language translations for Pashto ('ps'). (thanks to @isshort)
+- Removed old travis.yaml CI file.
+
+## 11.1.0
+
+- [439] Added: Passed the language code to iTunes search api to get localized release notes for the iOS App Store. Thanks to @ibraheemalayan and @Add00w for the changes.
+
+## 11.0.0
+
+- [413] Fixed Haitian Creole messages to use correct grammar. (thanks to @wjeanvilma)
+- [415] Added Kurdish Sorani ('ku') language translation. (thanks to @drpshtiwan)
+- Minimum Flutter supported version is now 3.24.0, and minimum Dart version is 3.5.0.
+- Minor updates to address deprecation warnings.
+
+## 10.3.0
+
+Allowed for package_info_plus 8.0.0.
+
+## 10.2.0
+
+Allowed for package_info_plus 7.0.0.
+
+## 10.1.0
+
+[[386](https://github.com/larryaasen/upgrader/pull/386)] Added client headers that can optionally be passed in with a client.
+
+[[375](https://github.com/larryaasen/upgrader/issues/375)] Fixed issue with Android Play Store titles that contained "\u0027".
+
+## 10.0.1
+
+Allowed for device_info_plus 10.0.0 and package_info_plus 6.0.0.
+
+## 10.0.0
+
+This major update changes the structure of how the internal state is maintained and how access to app stores is provided. The API has not changed for the standard use cases. However, the way in which Appcast is used has changed slightly.
+
+This update also makes it easier to extend upgrader to support more app stores without changing upgrader. This will come into play when used on Linux and Windows, or when supporting alternate app stores on Android.
+
+## 10.0.0-alpha.3
+
+- Fixed deprecation warning for WillPopScope and replaced it with PopScope, which required the minimum Flutter SDK version to be moved up to 3.16.0 in this package.
+- Renamed parameter canDismissDialog to barrierDismissible in `UpgradeAlert`.
+
+### 10.0.0
+
+This major update changes the structure of how the internal state is maintained and how access to app stores is provided. The API has not changed for the standard use cases. However, the way in which Appcast is used has changed slightly.
+
+This update also makes it easier to extend upgrader to support more app stores without changing upgrader. This will come into play when used on Linux and Windows, or when supporting alternate app stores on Android.
+
+### Changes in 10.0.0
+- Implemented [UpgraderState] that is used internally to replace evaluation ready.
+- BREAKING: Removed Appcast configuration so that an Appcast [UpgraderStore] can be used.
+- Fixed deprecation warning for WillPopScope and replaced it with PopScope, which required the minimum Flutter SDK version to be moved up to 3.16.0 in this package.
+- Renamed parameter canDismissDialog to barrierDismissible in `UpgradeAlert`.
+
+## 10.0.0-alpha.2
+
+(README file and documentation updates)
+
+This major update changes the structure of how the internal state is maintained and how access to app stores is provided. The API has not changed for the standard use cases. However, the way in which Appcast is used has changed slightly.
+
+This update also makes it easier to extend upgrader to support more app stores without changing upgrader. This will come into play when used on Linux and Windows, or when supporting alternate app stores on Android.
+
+### Changes in 10.0.0
+- Implemented [UpgraderState] that is used internally to replace evaluation ready.
+- BREAKING: Removed Appcast configuration so that an Appcast [UpgraderStore] can be used.
+
+## 10.0.0-alpha.1
+
+- Implemented [UpgraderState] that is used internally to replace evaluation ready.
+- BREAKING: Removed Appcast configuration so that an Appcast [UpgraderStore] can be used.
+
 ## 9.0.0
 
 ### BREAKING CHANGES
@@ -599,12 +729,12 @@ the US. The country code can be overriden with the optional `countryCode` parame
 
 ## 0.10.4
 
-* Updated dependency xml to ">=3.5.0 <5.0.0" to improve score on pub.dev in the 
+* Updated dependency xml to ">=3.5.0 <5.0.0" to improve score on pub.dev in the
 Maintenance issues and suggestions section.
 
 ## 0.10.3
 
-* Updated depenency flutter_device_locale to 0.4.0, and xml to 3.5.0, to improve score on pub.dev in the 
+* Updated depenency flutter_device_locale to 0.4.0, and xml to 3.5.0, to improve score on pub.dev in the
 Maintenance issues and suggestions section.
 
 ## 0.10.2
@@ -620,7 +750,7 @@ Maintenance issues and suggestions section.
 
 * Added options to hide ignore and later buttons. (Thanks to Karthik Ponnam)
 * Added option to close alert dialog on tap outside of alert dialog. (Thanks to Karthik Ponnam)
-* 
+*
 
 ## 0.9.0
 
@@ -680,7 +810,7 @@ defaults to debug logging on, and added command line app to evaluate the iTunes 
 * added many customizations to the widget including callbacks for onIgnore, onLater, and onUpdate
 * updated the README screenshot
 * updated tests, improved README
-* broke out widget into new file 
+* broke out widget into new file
 
 ## 0.1.0
 

@@ -1,11 +1,12 @@
 /*
- * Copyright (c) 2021-2023 Larry Aasen. All rights reserved.
+ * Copyright (c) 2021-2024 Larry Aasen. All rights reserved.
  */
 
 import 'package:flutter/material.dart';
 
 import 'alert_style_widget.dart';
 import 'upgrade_messages.dart';
+import 'upgrade_state.dart';
 import 'upgrader.dart';
 
 /// A widget to display the upgrade card.
@@ -24,6 +25,7 @@ class UpgradeCard extends StatefulWidget {
     this.onLater,
     this.onUpdate,
     this.overflow = TextOverflow.ellipsis,
+    this.showPrompt = true,
     this.showIgnore = true,
     this.showLater = true,
     this.showReleaseNotes = true,
@@ -54,6 +56,9 @@ class UpgradeCard extends StatefulWidget {
   /// How visual overflow should be handled.
   final TextOverflow? overflow;
 
+  /// Hide or show Prompt label on dialog (default: true)
+  final bool showPrompt;
+
   /// Hide or show Ignore button on dialog (default: true)
   final bool showIgnore;
 
@@ -78,25 +83,26 @@ class UpgradeCardState extends State<UpgradeCard> {
   /// Describes the part of the user interface represented by this widget.
   @override
   Widget build(BuildContext context) {
-    if (widget.upgrader.debugLogging) {
+    if (widget.upgrader.state.debugLogging) {
       print('upgrader: build UpgradeCard');
     }
 
     return StreamBuilder(
-        initialData: widget.upgrader.evaluationReady,
-        stream: widget.upgrader.evaluationStream,
-        builder: (BuildContext context,
-            AsyncSnapshot<UpgraderEvaluateNeed> snapshot) {
+        initialData: widget.upgrader.state,
+        stream: widget.upgrader.stateStream,
+        builder: (BuildContext context, AsyncSnapshot<UpgraderState> snapshot) {
           if ((snapshot.connectionState == ConnectionState.waiting ||
                   snapshot.connectionState == ConnectionState.active) &&
-              snapshot.data != null &&
-              snapshot.data!) {
-            if (widget.upgrader.shouldDisplayUpgrade()) {
-              return buildUpgradeCard(
-                  context, const Key('upgrader_alert_card'));
-            } else {
-              if (widget.upgrader.debugLogging) {
-                print('upgrader: UpgradeCard will not display');
+              snapshot.data != null) {
+            final upgraderState = snapshot.data!;
+            if (upgraderState.versionInfo != null) {
+              if (widget.upgrader.shouldDisplayUpgrade()) {
+                return buildUpgradeCard(
+                    context, const Key('upgrader_alert_card'));
+              } else {
+                if (widget.upgrader.state.debugLogging) {
+                  print('upgrader: UpgradeCard will not display');
+                }
               }
             }
           }
@@ -111,7 +117,7 @@ class UpgradeCardState extends State<UpgradeCard> {
     final message = widget.upgrader.body(appMessages);
     final releaseNotes = widget.upgrader.releaseNotes;
 
-    if (widget.upgrader.debugLogging) {
+    if (widget.upgrader.state.debugLogging) {
       print('upgrader: UpgradeCard: will display');
       print('upgrader: UpgradeCard: showDialog title: $title');
       print('upgrader: UpgradeCard: showDialog message: $message');
@@ -151,9 +157,11 @@ class UpgradeCardState extends State<UpgradeCard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(message),
-            Padding(
+            if (widget.showPrompt)
+              Padding(
                 padding: const EdgeInsets.only(top: 15.0),
-                child: Text(appMessages.message(UpgraderMessage.prompt) ?? '')),
+                child: Text(appMessages.message(UpgraderMessage.prompt) ?? ''),
+              ),
             if (notes != null) notes,
           ],
         ),
@@ -208,7 +216,7 @@ class UpgradeCardState extends State<UpgradeCard> {
       (widget.upgrader.releaseNotes?.isNotEmpty ?? false);
 
   void onUserIgnored() {
-    if (widget.upgrader.debugLogging) {
+    if (widget.upgrader.state.debugLogging) {
       print('upgrader: button tapped: ignore');
     }
 
@@ -223,7 +231,7 @@ class UpgradeCardState extends State<UpgradeCard> {
   }
 
   void onUserLater() {
-    if (widget.upgrader.debugLogging) {
+    if (widget.upgrader.state.debugLogging) {
       print('upgrader: button tapped: later');
     }
 
@@ -234,7 +242,7 @@ class UpgradeCardState extends State<UpgradeCard> {
   }
 
   void onUserUpdated() {
-    if (widget.upgrader.debugLogging) {
+    if (widget.upgrader.state.debugLogging) {
       print('upgrader: button tapped: update now');
     }
 

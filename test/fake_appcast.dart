@@ -5,11 +5,12 @@ import 'dart:io';
 
 import 'package:mockito/mockito.dart';
 import 'package:upgrader/src/appcast.dart';
-import 'package:upgrader/src/upgrader.dart';
+import 'package:version/version.dart';
 
 import 'appcast_test.dart';
 
 class FakeAppcast extends Fake implements TestAppcast {
+  FakeAppcast();
   int callCount = 0;
 
   @override
@@ -55,20 +56,20 @@ class FakeAppcast extends Fake implements TestAppcast {
     return [AppcastItem()];
   }
 
-  AppcastConfiguration config =
-      AppcastConfiguration(url: 'http://some.fakewebsite.com', supportedOS: [
-    'android',
-    'fuchsia',
-    'ios',
-    'linux',
-    'macos',
-    'web',
-    'windows',
-  ]);
+  // AppcastConfiguration config =
+  //     AppcastConfiguration(url: 'http://some.fakewebsite.com', supportedOS: [
+  //   'android',
+  //   'fuchsia',
+  //   'ios',
+  //   'linux',
+  //   'macos',
+  //   'web',
+  //   'windows',
+  // ]);
 
   @override
   List<AppcastItem>? items = [];
 
   @override
-  String? osVersionString = '';
+  Version osVersion = Version(0, 0, 0);
 }
