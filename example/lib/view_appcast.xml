@@ -35,6 +35,7 @@
             </sparkle:tags>
             <sparkle:criticalUpdate sparkle:version="1.19.0"></sparkle:criticalUpdate>
             <enclosure url="https://play.google.com/store/apps/details?id=vet.vetz.view.app" sparkle:version="1.19.0" sparkle:os="android"/>
+            <sparkle:minimumSystemVersion>1.19.0</sparkle:minimumSystemVersion>
         </item>
         <item>
             <!--This is used to force updates -->
