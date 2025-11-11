@@ -17,8 +17,8 @@
             <sparkle:tags>
                 <sparkle:criticalUpdate/>
             </sparkle:tags>
-            <sparkle:criticalUpdate sparkle:version="1.18.2"></sparkle:criticalUpdate>
-            <enclosure url="https://app.view.production.vetos.io" sparkle:version="1.18.2" sparkle:os="web"/>
+            <sparkle:criticalUpdate sparkle:version="1.18.3"></sparkle:criticalUpdate>
+            <enclosure url="https://app.view.production.vetos.io" sparkle:version="1.18.3" sparkle:os="web"/>
         </item>
         <item>
             <!--This is used to force updates -->
